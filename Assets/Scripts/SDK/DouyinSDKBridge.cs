@@ -14,6 +14,9 @@ namespace DouyinMiniGame.SDK
         [Tooltip("抖音小游戏 AppID（在抖音开放平台创建游戏后获取）")]
         [SerializeField] private string _appId = "";
 
+        /// <summary>抖音小游戏 AppID</summary>
+        public string AppId => _appId;
+
         /// <summary>SDK 是否已初始化</summary>
         public bool IsInitialized { get; private set; }
 

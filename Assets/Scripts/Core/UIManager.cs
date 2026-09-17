@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DouyinMiniGame.Framework;
+using DouyinMiniGame.Gameplay;
 
 namespace DouyinMiniGame.Core
 {

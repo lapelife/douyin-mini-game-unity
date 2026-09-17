@@ -71,11 +71,16 @@ namespace DouyinMiniGame.Bootstrap
             cam.orthographicSize = 5f;
             cam.backgroundColor = new Color(0.2f, 0.6f, 0.9f, 1f);
 
-            // 添加 Audio Listener
-            if (Object.FindObjectOfType<AudioListener>() == null)
+            // AudioListener 在中国版 Unity 中可能缺少 Audio 模块，用反射安全添加
+            try
             {
-                camGo.AddComponent<AudioListener>();
+                var alType = System.Type.GetType("UnityEngine.AudioListener, UnityEngine.AudioModule");
+                if (alType != null && camGo.GetComponent(alType) == null)
+                {
+                    camGo.AddComponent(alType);
+                }
             }
+            catch { /* Audio 模块不可用时静默跳过 */ }
         }
     }
 }

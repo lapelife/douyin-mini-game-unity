@@ -31,15 +31,15 @@ namespace DouyinMiniGame.Gameplay
 
         private void OnEnable()
         {
-            EventBus.On("CoinCaught", OnCoinCaught);
-            EventBus.On("BombCaught", OnBombCaught);
+            EventBus.On<int>("CoinCaught", OnCoinCaught);
+            EventBus.On<int>("BombCaught", OnBombCaught);
             EventBus.On("ScoreReset", ResetScore);
         }
 
         private void OnDisable()
         {
-            EventBus.Off("CoinCaught", OnCoinCaught);
-            EventBus.Off("BombCaught", OnBombCaught);
+            EventBus.Off<int>("CoinCaught", OnCoinCaught);
+            EventBus.Off<int>("BombCaught", OnBombCaught);
             EventBus.Off("ScoreReset", ResetScore);
         }
 

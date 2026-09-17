@@ -44,16 +44,16 @@ namespace DouyinMiniGame.Core
 
         private void OnEnable()
         {
-            EventBus.On("CoinCaught", OnCoinCaught);
-            EventBus.On("ItemMissed", OnItemMissed);
+            EventBus.On<int>("CoinCaught", OnCoinCaught);
+            EventBus.On<int>("ItemMissed", OnItemMissed);
             EventBus.On("RequestStartGame", StartGame);
             EventBus.On("RequestRestart", StartGame);
         }
 
         private void OnDisable()
         {
-            EventBus.Off("CoinCaught", OnCoinCaught);
-            EventBus.Off("ItemMissed", OnItemMissed);
+            EventBus.Off<int>("CoinCaught", OnCoinCaught);
+            EventBus.Off<int>("ItemMissed", OnItemMissed);
             EventBus.Off("RequestStartGame", StartGame);
             EventBus.Off("RequestRestart", StartGame);
         }
