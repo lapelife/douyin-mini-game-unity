@@ -54,8 +54,8 @@ namespace DouyinMiniGame.EditorTools
             // 设置竖屏（接金币游戏适合竖屏）
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
 
-            // 设置目标 API
-            PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel_24;
+            // 设置目标 API（使用 Auto 让 Unity 自动选择最低兼容版本）
+            PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto;
 
             // 添加抖音 SDK 宏定义
             var defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(BuildTargetGroup.Android);
