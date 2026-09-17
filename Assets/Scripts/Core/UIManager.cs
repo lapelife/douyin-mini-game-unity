@@ -41,6 +41,18 @@ namespace DouyinMiniGame.Core
             EventBus.On<GameState>("GameStateChanged", OnGameStateChanged);
         }
 
+        private void Start()
+        {
+            // 兜底：确保开始面板在启动时可见
+            if (_startPanel != null)
+            {
+                _startPanel.SetActive(true);
+                Debug.Log("[UIManager] 开始面板已激活");
+            }
+            if (_gameOverPanel != null)
+                _gameOverPanel.SetActive(false);
+        }
+
         private void OnDisable()
         {
             EventBus.Off<int>("ScoreChanged", OnScoreChanged);
