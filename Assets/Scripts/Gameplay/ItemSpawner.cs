@@ -132,7 +132,8 @@ namespace DouyinMiniGame.Gameplay
                     continue;
                 }
 
-                item.transform.Translate(Vector3.down * item.FallSpeed * Time.deltaTime);
+                // 必须用 Space.World，否则 Spinner 旋转会改变局部下方向导致物品乱飘
+                item.transform.Translate(Vector3.down * item.FallSpeed * Time.deltaTime, Space.World);
 
                 if (item.transform.position.y < _bottomY)
                 {
