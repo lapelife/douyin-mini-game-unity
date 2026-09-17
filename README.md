@@ -144,7 +144,7 @@ EventBus.Fire("MyEvent", 42);
 - [抖音Unity小游戏发布](https://developer.open-douyin.com/docs/resource/zh-CN/mini-game/develop/guide/game-engine/rd-to-SCgame/unity-game-access/sc_publish)
 
 ## 技术规格
-- Unity 版本: 2022.3.20f1 LTS
+- Unity 版本: 2022.3.62f3c1 (中国版 LTS)
 - 渲染管线: Built-in
 - 相机: 正交 (orthographicSize=5)
 - UI: uGUI (Screen Space Overlay)
